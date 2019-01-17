@@ -1,0 +1,10 @@
+albcdw:x
+8
+ls -a -l -a -l -w documents -b
+ls -w -w -w
+ls -w 10 -x -w 15
+ls -cc -d -bb -a -e -l
+ff -n
+fr -a 9
+fr -w 4568 -jj
+ff -w -m
