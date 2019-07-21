@@ -316,3 +316,31 @@ int main(){
 	}
 	cout<<answer;
 } */
+
+//201809-1 Âô²Ë
+/*
+int main(int argc, char** argv) {
+	freopen("test.txt","r",stdin);
+	int nums = 0;
+	cin >> nums;
+	int *stores = new int[nums + 2]();
+	int *tomorrow = new int[nums + 2]();
+	for (int i = 1; i <= nums;++i) {
+		cin >> stores[i];
+	}
+	for (int i = 1; i <= nums;++i) {
+		if (i==1) {
+			tomorrow[i] = floor((stores[i] + stores[i + 1]) / 2);
+		}
+		else if (i==nums) {
+			tomorrow[i] = floor((stores[i - 1] + stores[i]) / 2);
+		}
+		else {
+			tomorrow[i] = floor((stores[i - 1] + stores[i] + stores[i + 1]) / 3);
+		}
+	}
+	for (int i = 1; i <= nums;++i) {
+		cout << tomorrow[i] << " ";
+	}
+	return 0;
+}*/

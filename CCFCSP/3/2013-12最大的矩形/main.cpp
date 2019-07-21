@@ -31,5 +31,4 @@ int main() {
 		answer = max(answer,max_length*(maxium-i+1));
 	}
 	cout<<answer;
-	return 0;
 }

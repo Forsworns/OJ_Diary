@@ -1,6 +1,57 @@
 //输出控制位数cout << fixed << setprecision(N) 去掉fixed为精度
 //记得删掉freopen
 //dev c++加断点以后调试执行，点选变量文本移动光标可以看到变量内容 
+
+// 201809-2 买菜
+/* 
+ int main(int argc, char** argv) {
+	freopen("test.txt","r",stdin);
+	int nums = 0;
+	cin >> nums;
+	int totalTime = 0;
+	pair<int, int> *H = new pair<int,int>[nums];
+	pair<int, int> *W = new pair<int,int>[nums];
+	for (int i = 0; i < nums;++i) {
+		cin >> H[i].first>>H[i].second;
+	}
+	for (int i = 0; i < nums; ++i) {
+		cin >> W[i].first >> W[i].second;
+	}
+	int j = 0;
+	for (int i = 0; i < nums;++i) {
+		if (j >= nums) {
+			break;
+		}
+		else {
+			while(j<nums) {
+				if (H[i].first <= W[j].first && H[i].second<=W[j].second && H[i].second - W[j].first > 0) {
+					totalTime += H[i].second - W[j].first;
+					break;
+				}
+				else if (H[i].first <= W[j].first && H[i].second >= W[j].second) {
+					totalTime += W[j].second - W[j].first;
+					j++;
+				}
+				else if (H[i].first >= W[j].first && H[i].second <= W[j].second) {
+					totalTime += H[i].second - H[i].first;
+					break;
+				}
+				else if (H[i].first >= W[j].first && H[i].second >= W[j].second) {
+					if (W[j].second - H[i].first > 0) {
+						totalTime += W[j].second - H[i].first;
+					}
+					j++;
+				}
+				else {
+					break;
+				}
+			}
+		}
+	}
+	cout << totalTime;
+	return 0;
+}
+*/
  
 //201803-2 碰撞的小球
 /*
