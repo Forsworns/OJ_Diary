@@ -44,10 +44,17 @@ if __name__ == "__main__":
         else:
             print("ERROR CODE {}: {}".format(
                 response.status_code, response.json()["detail"]))
-			if response.status_code == 403:
-			    sleep(1.5)
-				continue
-			else:
+            if response.status_code == 403:
+                sleep(1.5)
+                continue
+            else:
                 break
     session.get(logout_url)
     session.close()
+    
+    rust_dir = './rust'
+    rust_files = os.listdir(rust_dir) 
+    for r_f in rust_files:
+        r_f = os.path.join(rust_dir,r_f)
+        if os.path.isfile(r_f):
+            os.rename(r_f,r_f.replace('.rust','.rs'))
