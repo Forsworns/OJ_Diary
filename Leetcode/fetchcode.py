@@ -44,6 +44,10 @@ if __name__ == "__main__":
         else:
             print("ERROR CODE {}: {}".format(
                 response.status_code, response.json()["detail"]))
-            break
+			if response.status_code == 403:
+			    sleep(1.5)
+				continue
+			else:
+                break
     session.get(logout_url)
     session.close()
