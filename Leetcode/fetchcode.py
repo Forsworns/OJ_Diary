@@ -11,7 +11,7 @@ if __name__ == "__main__":
     login_url = 'https://leetcode-cn.com/accounts/login/'  # session模拟登陆后利用session中的cookies去保持登陆状态获取个人题解
     logout_url = 'https://leetcode.com/accounts/logout/'
 
-    limit = 20 # 最大是20
+    limit = 10 # 最大是20
     offset = 0
 
     session = requests.session()
@@ -40,7 +40,7 @@ if __name__ == "__main__":
                     if not os.path.exists(file_name):
                         with open(file_name,"w",encoding='utf-8') as f:
                             f.write(item['code'])
-            sleep(0.5) # 防止过高频率访问
+            sleep(0.8) # 防止过高频率访问
         else:
             print("ERROR CODE {}: {}".format(
                 response.status_code, response.json()["detail"]))
