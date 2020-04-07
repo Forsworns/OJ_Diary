@@ -1,0 +1,8 @@
+# Write your MySQL query statement below
+select Email
+from (
+    select Email, count(Email) as ct
+    from Person
+    group by Email
+) as temp
+where temp.ct!=1

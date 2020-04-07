@@ -40,7 +40,7 @@ if __name__ == "__main__":
                     if not os.path.exists(file_name):
                         with open(file_name,"w",encoding='utf-8') as f:
                             f.write(item['code'])
-            sleep(0.8) # 防止过高频率访问
+            sleep(1.5) # 防止过高频率访问
         else:
             print("ERROR CODE {}: {}".format(
                 response.status_code, response.json()["detail"]))
